@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #070C17;
+    color: #CBD5E1;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0F172A;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #4C1D95;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7C3AED;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-[#0F1724] rounded-2xl border border-[#1C2A3A] hover:border-[#2A3F57] transition-all duration-200;
+  }
+  .badge-easy {
+    @apply bg-emerald-900/40 text-emerald-300 border border-emerald-700/50;
+  }
+  .badge-medium {
+    @apply bg-amber-900/40 text-amber-300 border border-amber-700/50;
+  }
+  .badge-hard {
+    @apply bg-red-900/40 text-red-300 border border-red-700/50;
+  }
+  .tab-active {
+    @apply bg-[#0F1724] text-purple-400 font-semibold border-b-2 border-purple-500;
+  }
+  .tab-inactive {
+    @apply text-gray-500 hover:text-gray-200 hover:bg-[#1C2A3A] font-medium;
+  }
+  .freq-bar {
+    @apply h-1.5 rounded-full bg-purple-500;
+  }
+  .btn-primary {
+    @apply bg-purple-600 hover:bg-purple-500 text-white font-semibold py-2.5 px-5 rounded-xl transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-gray-900;
+  }
+  .btn-outline {
+    @apply border border-purple-700 text-purple-400 hover:bg-purple-900/30 font-medium py-2 px-4 rounded-xl transition-colors duration-150;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #A78BFA, #7C3AED);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bg-hero {
+    background: linear-gradient(135deg, #1E0A45 0%, #3B0D8F 40%, #5B21B6 80%, #6D28D9 100%);
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.35s ease-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  /* glow ring for active cards */
+  .ring-glow {
+    box-shadow: 0 0 0 2px rgba(139,92,246,0.35);
+  }
+}
